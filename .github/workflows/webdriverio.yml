@@ -1,0 +1,19 @@
+name: Webdriver IO Tests
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: npm install, build, and test
+        run: |
+          npm ci
+          npm run test:e2e:webdriver
+        env:
+          TEST_URL: ${{ secrets.TEST_URL }}
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}

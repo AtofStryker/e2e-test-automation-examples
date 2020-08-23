@@ -1,0 +1,10 @@
+{
+  "pageLoadTimeout": 20000,
+  "implicitTimeout": 20000,
+  "waitForTimeout": 20000,
+  "frameworkTimeout": 20000,
+  "connectionRetryTimeout": 20000,
+  "connectionRetryCount": 3,
+  "browserWidth": 1920,
+  "browserHeight": 1080
+}
